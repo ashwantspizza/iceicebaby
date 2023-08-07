@@ -57,6 +57,7 @@ const App = () => {
                 <label key={allergen}>
                   <input
                     type="checkbox"
+                    disabled={selectedAllergens[0] && selectedAllergens[0] !== allergen}
                     value={allergen}
                     checked={selectedAllergens.includes(allergen)}
                     onChange={() => handleAllergensChange(allergen)}
@@ -69,7 +70,7 @@ const App = () => {
           {/* Filter smoothies based on selected allergens */}
           <div className="smoothie-grid">
             {smoothies
-              .filter((smoothie) => !smoothie?.allergens?.includes("nuts"))
+              .filter((smoothie) => !smoothie?.allergens?.includes(...selectedAllergens))
               .map((smoothie) => (
                 <SmoothieCard key={smoothie.id} smoothie={smoothie} />
               ))}
