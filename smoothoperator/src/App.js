@@ -43,11 +43,13 @@ const App = () => {
   // Render the App component with smoothie data and allergen filter
   return (
     <div className="App">
+    <div className="header">SMOOTH OPERATOR</div>
       {fetchError && <p>{fetchError}</p>}
       {smoothies && (
         <div className="smoothies">
           {/* Add checkboxes for each allergen */}
           <div className="allergen-filter">
+          <h1 className="title">Filter by allergy</h1>
             {['gluten', 'nuts', 'peanuts', 'milk', 'soy', 'egg', 'sesame'].map((allergen) => {
               const prefixedAllergen = `no ${allergen}`;
               {/* console.log(selectedAllergens); */}
