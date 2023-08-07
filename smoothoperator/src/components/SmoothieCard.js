@@ -8,6 +8,7 @@ const SmoothieCard = ( { smoothie }) => {
     return (
         // Container for the smoothie card with the "smoothie-card" class
         <div className="smoothie-card">
+            <img src={smoothie.image} alt="Smoothie" className='smoothie-image' />
             <h3>{smoothie.title}</h3>
             <p>{smoothie.allergens}</p>
             <p>{smoothie.ingredients}</p>
