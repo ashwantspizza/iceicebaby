@@ -57,7 +57,7 @@ const App = () => {
                 <label key={allergen}>
                   <input
                     type="checkbox"
-                    disabled={selectedAllergens[0] && selectedAllergens[0] !== allergen}
+                    // disabled={selectedAllergens[0] && selectedAllergens[0] !== allergen}
                     value={allergen}
                     checked={selectedAllergens.includes(allergen)}
                     onChange={() => handleAllergensChange(allergen)}
