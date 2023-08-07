@@ -68,11 +68,13 @@ const App = () => {
           </div>
           {/* Filter smoothies based on selected allergens */}
           <div className="smoothie-grid">
-            {smoothies
-              .filter((smoothie) => !smoothie?.allergens?.includes("nuts"))
-              .map((smoothie) => (
-                <SmoothieCard key={smoothie.id} smoothie={smoothie} />
-              ))}
+          {smoothies
+  .filter((smoothie) => {
+    return selectedAllergens.every((allergen) => !smoothie?.allergens?.includes(allergen));
+  })
+  .map((smoothie) => (
+    <SmoothieCard key={smoothie.id} smoothie={smoothie} />
+  ))}
           </div>
         </div>
       )}
