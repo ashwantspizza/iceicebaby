@@ -4,18 +4,22 @@ import SmoothieCard from './components/SmoothieCard';
 import './App.css';
 
 const App = () => {
-  console.log(supabase);
+  // console.log(supabase);
+
   // State variable to handle smoothie data and allergen filtering
   const [fetchError, setFetchError] = useState(null);
   const [smoothies, setSmoothies] = useState(null);
   const [selectedAllergens, setSelectedAllergens] = useState([]);
 
+  console.log(smoothies);
   // Function to handle allergen selection and filtering
-  // const handleAllergensChange = (allergen) => {
-  //   setSelectedAllergens((prev) =>
-  //     prev.includes(allergen) ? prev.filter((item) => item !== allergen) : [...prev, allergen]
-  //   );
-  // };
+  const handleAllergensChange = (allergen) => {
+    // console.log("hey");
+    setSelectedAllergens((prev) =>
+      prev.includes(allergen) ? prev.filter((item) => item !== allergen) : [...prev, allergen]
+    );
+  };
+
 
   // useEffect hook to fetch smoothies from the database on component mount
   useEffect(() => {
@@ -46,13 +50,14 @@ const App = () => {
           <div className="allergen-filter">
             {['gluten', 'nuts', 'peanuts', 'milk', 'soy', 'egg', 'sesame'].map((allergen) => {
               const prefixedAllergen = `no ${allergen}`;
+              {/* console.log(selectedAllergens); */}
               return (
                 <label key={allergen}>
                   <input
                     type="checkbox"
                     value={allergen}
                     checked={selectedAllergens.includes(allergen)}
-                    // onChange={() => handleAllergensChange(allergen)}
+                    onChange={() => handleAllergensChange(allergen)}
                   />
                   {prefixedAllergen.charAt(0).toUpperCase() + prefixedAllergen.slice(1)}
                 </label>
@@ -62,7 +67,7 @@ const App = () => {
           {/* Filter smoothies based on selected allergens */}
           <div className="smoothie-grid">
             {smoothies
-              .filter((smoothie) => !selectedAllergens.some((allergen) => smoothie.allergen.includes(allergen)))
+              .filter((smoothie) => !smoothie?.allergens?.includes("nuts"))
               .map((smoothie) => (
                 <SmoothieCard key={smoothie.id} smoothie={smoothie} />
               ))}
