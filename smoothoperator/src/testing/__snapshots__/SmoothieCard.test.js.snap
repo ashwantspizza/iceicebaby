@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SmoothieCard renders correctly 1`] = `
+<div>
+  <div
+    class="smoothie-card"
+  >
+    <img
+      alt="Smoothie"
+      class="smoothie-image"
+    />
+    <h3>
+      Smoothie
+    </h3>
+    <p>
+      nuts
+    </p>
+    <p>
+      banana, milk, nuts
+    </p>
+    <div
+      class="rating"
+    >
+      4
+    </div>
+  </div>
+</div>
+`;
