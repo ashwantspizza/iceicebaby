@@ -1,6 +1,6 @@
 # iceicebaby
 
-[icelandhackathon](https://icelandhackathon.netlify.app/)
+[icelandhackathon](https://iceicebabyhackathon.netlify.app/)
 
 For our hackathon collaborating with Iceland, we were given a brief of 'creating an app that helps customers find products that match their dietary preferences and allergies' in less than a day. Our team, Ice Ice Baby, are proud of what we came up with!
 
